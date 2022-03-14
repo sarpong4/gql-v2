@@ -8,6 +8,15 @@
       "avatar": "http",
       "createdAt": 1571213104370,
       "id": "Z2hlvDmLOSRZGebC_Z_aA"
+    },
+    {
+      "email": "sarpnissi4@gmail.com",
+      "password": "dterminator",
+      "role": "ADMIN",
+      "verified": false,
+      "avatar": "http",
+      "createdAt": 1647046652065,
+      "id": "5rea5VynHjVND-_AcF3Yl"
     }
   ],
   "posts": [],
