@@ -1,4 +1,7 @@
 const { authenticated, authorized } = require("./auth");
+const { PubSub } = require("graphql-subscriptions");
+
+const pubsub = new PubSub();
 const NEW_POST = "NEW_POST";
 
 /**
@@ -33,8 +36,13 @@ module.exports = {
     }),
 
     createPost: authenticated((_, { input }, { user, models }) => {
-      const post = models.Post.createOne({ ...input, author: user.id });
-      pubsub.publish(NEW_POST, { newPost: post });
+      const post = models.Post.createOne({
+        ...input,
+        author: user.id,
+        likes: 0,
+        views: 0,
+      });
+      pubsub.publish(NEW_POST, { createPost: post });
       return post;
     }),
 
@@ -89,6 +97,11 @@ module.exports = {
     settings: authenticated((root, __, { user, models }) => {
       return models.Settings.findOne({ id: root.settings, user: user.id });
     }),
+  },
+  Subscription: {
+    createPost: {
+      subscribe: () => pubsub.asyncIterator([NEW_POST]),
+    },
   },
   Settings: {
     user: authenticated((settings, _, { user, models }) => {

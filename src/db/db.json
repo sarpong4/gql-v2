@@ -19,6 +19,103 @@
       "id": "5rea5VynHjVND-_AcF3Yl"
     }
   ],
-  "posts": [],
+  "posts": [
+    {
+      "message": "testing subscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "createdAt": 1647456158791,
+      "id": "dkBXBiwmeYXUrpbyOPcCh"
+    },
+    {
+      "message": "test subscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "createdAt": 1647456236682,
+      "id": "NRYW2_JVBkTLIoXiJ9rN7"
+    },
+    {
+      "message": "test subscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "createdAt": 1647456365824,
+      "id": "9U5cz1x8ApZbmYLZ3xO1t"
+    },
+    {
+      "message": "test subscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "createdAt": 1647456571155,
+      "id": "MKHli1CR4VC3aP5XBwnZW"
+    },
+    {
+      "message": "test subscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647456591689,
+      "id": "7W-luur5gmHp70GY4VYF3"
+    },
+    {
+      "message": "Test subsscription",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647562607325,
+      "id": "XAlz5ZUx5cE5YtA5WCRdT"
+    },
+    {
+      "message": "Test subsscription with auth",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647562736821,
+      "id": "Ni4v_04QMBQExd1h4Moa2"
+    },
+    {
+      "message": "Test subsscription and check onConnect",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647563029802,
+      "id": "kAMUKT5Nr80mqZcIdIqJo"
+    },
+    {
+      "message": "Test subsscription and check onConnect 2",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647563082024,
+      "id": "I1e5X2P9u3M_nkOZiAM14"
+    },
+    {
+      "message": "Test subsscription and check onConnect 3",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647563272321,
+      "id": "Ve4OZm1Daa0oV74Xwshi-"
+    },
+    {
+      "message": "Test subsscription and check onConnect 4",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647568652790,
+      "id": "MDBQ0OSSKSVYY7ufsRY0H"
+    },
+    {
+      "message": "Test subsscription and check context",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647568972468,
+      "id": "VhsD6BvZYNH3hZbJhFJiq"
+    },
+    {
+      "message": "Test subscription and check context",
+      "author": "5rea5VynHjVND-_AcF3Yl",
+      "likes": 0,
+      "views": 0,
+      "createdAt": 1647569042562,
+      "id": "J4dSnek0sqdwmIezsZVwn"
+    }
+  ],
   "settings": []
 }
