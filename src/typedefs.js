@@ -1,6 +1,10 @@
 const gql = require("graphql-tag");
 
 module.exports = gql`
+  directive @formatDate(format: String = "dd MMM yyyy") on FIELD_DEFINITION
+  directive @authentication on FIELD_DEFINITION
+  directive @authorization(role: Role! = ADMIN) on FIELD_DEFINITION
+
   enum Theme {
     DARK
     LIGHT
@@ -17,7 +21,7 @@ module.exports = gql`
     email: String!
     avatar: String!
     verified: Boolean!
-    createdAt: String!
+    createdAt: String! @formatDate
     posts: [Post]!
     role: Role!
     settings: Settings!
@@ -32,7 +36,7 @@ module.exports = gql`
     id: ID!
     message: String!
     author: User!
-    createdAt: String!
+    createdAt: String! @formatDate
     likes: Int!
     views: Int!
   }
@@ -48,7 +52,7 @@ module.exports = gql`
   type Invite {
     email: String!
     from: User!
-    createdAt: String!
+    createdAt: String! @formatDate
     role: Role!
   }
 
@@ -85,10 +89,10 @@ module.exports = gql`
   }
 
   type Query {
-    me: User!
+    me: User! @authentication
     posts: [Post]!
     post(id: ID!): Post!
-    userSettings: Settings!
+    userSettings: Settings! @authentication
     feed: [Post]!
   }
 
@@ -97,6 +101,8 @@ module.exports = gql`
     createPost(input: NewPostInput!): Post!
     updateMe(input: UpdateUserInput!): User
     invite(input: InviteInput!): Invite!
+      @authentication
+      @authorization(role: ADMIN)
     signup(input: SignupInput!): AuthUser!
     signin(input: SigninInput!): AuthUser!
   }

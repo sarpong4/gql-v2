@@ -9,12 +9,17 @@ const { makeExecutableSchema } = require("@graphql-tools/schema");
 const { WebSocketServer } = require("ws");
 const { useServer } = require("graphql-ws/lib/use/ws");
 const express = require("express");
+const {
+  dateFormatDirecitve,
+  authenticationDirective,
+  authorizationDirective,
+} = require("./directives");
 
 const startServer = async () => {
   const app = express();
   const httpServer = createServer(app);
 
-  const schema = makeExecutableSchema({ typeDefs, resolvers });
+  let schema = makeExecutableSchema({ typeDefs, resolvers });
 
   const wsServer = new WebSocketServer({
     server: httpServer,
@@ -42,8 +47,13 @@ const startServer = async () => {
     wsServer
   );
 
+  schema = dateFormatDirecitve(schema, "formatDate");
+  schema = authenticationDirective(schema, "authentication");
+  schema = authorizationDirective(schema, "authorization");
+
   const server = new ApolloServer({
     schema,
+    // schemaDirectives: { formatDate: FormatDateDirective },
     context({ req, connection }) {
       const context = { ...db };
       if (connection) {
